@@ -6,11 +6,11 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import { ScrollableMapProps } from "./ScrollableMap.types";
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin);
+/* gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, MotionPathPlugin); */
 
 const ScrollableMap: React.FC<ScrollableMapProps> = (props) => {
 
-  useEffect(() => {
+  /* useEffect(() => {
     
     // set initial states
     gsap.set("#scrollDist", { width: "100%", height: "2500%" });
@@ -97,7 +97,7 @@ const ScrollableMap: React.FC<ScrollableMapProps> = (props) => {
       gsap.set("#container", { left: innerWidth / 2, top: innerHeight / 2 });
     };
 
-  }, []);
+  }, []); */
  
 
   return (

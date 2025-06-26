@@ -5,9 +5,8 @@ import Skeleton from "react-loading-skeleton";
 import Button from "../Button";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 
-gsap.registerPlugin(SplitText, ScrambleTextPlugin);
+gsap.registerPlugin(SplitText);
 
 const Parallax: React.FC<ParallaxProps> = (props) => {
   const [isPlaying, setIsPlaying] = useState(false);

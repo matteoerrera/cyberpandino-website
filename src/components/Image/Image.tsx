@@ -5,10 +5,9 @@ import Skeleton from "react-loading-skeleton";
 import Button from "../Button";
 import gsap from "gsap";
 import SplitText from "gsap/SplitText";
-import { ScrambleTextPlugin } from "gsap/ScrambleTextPlugin";
 import ReactPlayer from "react-player";
 
-gsap.registerPlugin(SplitText, ScrambleTextPlugin);
+gsap.registerPlugin(SplitText);
 
 const Image: React.FC<ImageProps> = (props) => {
 

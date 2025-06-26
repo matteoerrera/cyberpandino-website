@@ -18,5 +18,15 @@ export default defineConfig({
   },
   server: {
     allowedHosts: ['a589-213-215-189-166.ngrok-free.app']
+  },
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: 'globalThis'
+      }
+    }
   }
 })

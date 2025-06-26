@@ -1,0 +1,200 @@
+@use "../../assets/scss/variables" as vars;
+
+
+.componentParallax {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 120vh;
+    will-change: transform
+
+
+
+   
+    &__container{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        padding: 80px 16px;
+    }
+    
+    &__video{
+        position: relative;
+
+        video{
+
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+
+            --clip-size: 20px;
+            --top-left-normal: 0 0;
+            --top-left-clip: 0 var(--clip-size), var(--clip-size) 0;
+            --top-right-normal: 100% 0;
+            --top-right-clip: calc(100% - var(--clip-size)) 0, 100% var(--clip-size);
+            --bottom-right-normal: 100% 100%;
+            --bottom-right-clip: 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%;
+            --bottom-left-normal: 0 100%;
+            --bottom-left-clip: var(--clip-size) 100%, 0 calc(100% - var(--clip-size));
+
+            --top-right: var(--top-right-clip);
+            --bottom-right: var(--bottom-right-normal);
+            --top-left: var(--top-left-normal);
+            --bottom-left: var(--bottom-left-normal);
+
+            --clip: polygon(var(--top-left, var(--top-left-normal)), var(--top-right, var(--top-right-normal)), var(--bottom-right, var(--bottom-right-normal)), var(--bottom-left, var(--bottom-left-normal)));
+            -webkit-clip-path: var(--clip);
+            clip-path: var(--clip);
+
+            @media(min-width: 960px){
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16/9;
+            }
+        
+        }
+
+       
+
+
+    }
+
+    &__play{
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        padding: 4px;
+        background: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        width: 32px;
+        height: 32px;
+
+        --clip-size: 20px;
+        --top-left-normal: 0 0;
+        --top-left-clip: 0 var(--clip-size), var(--clip-size) 0;
+        --top-right-normal: 100% 0;
+        --top-right-clip: calc(100% - var(--clip-size)) 0, 100% var(--clip-size);
+        --bottom-right-normal: 100% 100%;
+        --bottom-right-clip: 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%;
+        --bottom-left-normal: 0 100%;
+        --bottom-left-clip: var(--clip-size) 100%, 0 calc(100% - var(--clip-size));
+        --clip: polygon(var(--top-left, var(--top-left-normal)), var(--top-right, var(--top-right-normal)), var(--bottom-right, var(--bottom-right-normal)), var(--bottom-left, var(--bottom-left-normal)));
+        -webkit-clip-path: var(--clip);
+        clip-path: var(--clip);
+        --top-right: var(--top-right-clip);
+        --bottom-right: var(--bottom-right-normal);
+        --top-left: var(--top-left-normal);
+        --bottom-left: var(--bottom-left-normal);
+        --clip-size: 8px;
+
+        @media(min-width: 1024px){
+            bottom: 24px;
+            left: 24px;
+            right: initial;
+            top: initial;
+        }
+
+    }
+
+    &__wrapper{
+        --clip-size: 20px;
+        --top-left-normal: 0 0;
+        --top-left-clip: 0 var(--clip-size), var(--clip-size) 0;
+        --top-right-normal: 100% 0;
+        --top-right-clip: calc(100% - var(--clip-size)) 0, 100% var(--clip-size);
+        --bottom-right-normal: 100% 100%;
+        --bottom-right-clip: 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%;
+        --bottom-left-normal: 0 100%;
+        --bottom-left-clip: var(--clip-size) 100%, 0 calc(100% - var(--clip-size));
+        --clip: polygon(var(--top-left, var(--top-left-normal)), var(--top-right, var(--top-right-normal)), var(--bottom-right, var(--bottom-right-normal)), var(--bottom-left, var(--bottom-left-normal)));
+        -webkit-clip-path: var(--clip);
+        clip-path: var(--clip);
+        --top-right: var(--top-right-normal);
+        --bottom-right: var(--bottom-right-normal);
+        --top-left: var(--top-left-normal);
+        --bottom-left: var(--bottom-left-clip);
+        --clipped-outline-size: 300px;
+        --non-clipped-outline-size: 48px;
+        --outline-top-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / var(--non-clipped-outline-size) 1px;
+        --outline-top-left-clip: linear-gradient(135deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / var(--clipped-outline-size) 1px;
+        --outline-top-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / var(--non-clipped-outline-size) 1px;
+        --outline-top-right-clip: linear-gradient(-135deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / var(--clipped-outline-size) 1px;
+        --outline-bottom-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / var(--non-clipped-outline-size) 1px;
+        --outline-bottom-right-clip: linear-gradient(-45deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / var(--clipped-outline-size) 1px;
+        --outline-bottom-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / var(--non-clipped-outline-size) 1px;
+        --outline-bottom-left-clip: linear-gradient(45deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / var(--clipped-outline-size) 1px;
+        --outline-bottom-full-left-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px 60%;
+        --outline-bottom-full-left-60-clip: linear-gradient(45deg, #333 15px, transparent 15px), var(--outline-bottom-full-left-60-basic);
+        --outline-bottom-60-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 60% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px 100%;
+        --outline-bottom-60-left-clip: linear-gradient(45deg, #333 15px, transparent 15px), var(--outline-bottom-60-left-basic);
+        --outline-bottom-60-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 60% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px 100%;
+        --outline-bottom-60-right-clip: linear-gradient(-45deg, #333 15px, transparent 15px), var(--outline-bottom-60-right-basic);
+        --outline-top-full-right-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px 60%;
+        --outline-top-full-right-60-clip: linear-gradient(-135deg, #333 15px, transparent 15px), var(--outline-top-full-right-60-basic);
+        --outline-bottom-full-right-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px 60%;
+        --outline-bottom-full-right-60-clip: linear-gradient(-45deg, #333 15px, transparent 15px), var(--outline-bottom-full-right-60-basic);
+        --outline-top-full-left-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px 60%;
+        --outline-top-full-left-60-clip: linear-gradient(135deg, #333 15px, transparent 15px), var(--outline-top-full-left-60-basic);
+        --outline-upper-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px 30%;
+        --outline-upper-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px 30%;
+        --dummy-gradient: linear-gradient(transparent 0 0);
+        --outline-background: var(--outline-top-left, var(--dummy-gradient)), var(--outline-top-right, var(--dummy-gradient)), var(--outline-bottom-right, var(--dummy-gradient)), var(--outline-bottom-left, var(--dummy-gradient)), var(--outline-bottom-full-left-60, var(--dummy-gradient)), var(--outline-bottom-60-left, var(--dummy-gradient)), var(--outline-bottom-60-right, var(--dummy-gradient)), var(--outline-bottom-full-right-60, var(--dummy-gradient)), var(--outline-top-full-left-60, var(--dummy-gradient)), var(--outline-upper-left, var(--dummy-gradient)), var(--outline-upper-right, var(--dummy-gradient)), var(--outline-top-full-right-60, var(--dummy-gradient));
+        background: var(--outline-background);
+        background-repeat: no-repeat;
+        color: var(--tds-color-ct-accent-line);
+
+    }
+
+    &__content{
+        padding: 24px 8px;
+        will-change: transform
+
+        h3{
+            color: #c7c7c7;
+            font-size: 28px;
+            line-height: 34px;
+            font-weight: 400;
+            margin-bottom: 8px;
+
+        }
+
+        p{
+            color: #8e8e8e;
+            line-height: 26px;
+            font-size: 14px;
+            margin: 0;
+
+            @media(min-width: 960px){
+                line-height: 1.5;
+                font-size: 16px;
+            }
+        }
+
+        @media(min-width: 1140px){
+            display: flex;
+            align-items: flex-start;
+            gap: 100px;
+            justify-content: space-between;
+            padding: 40px 24px;
+
+            h3,p{
+                flex: 1;
+                margin: 0;
+            }
+
+        }
+    }   
+
+
+}
+
+
+
+
+

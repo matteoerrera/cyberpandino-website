@@ -1,0 +1,78 @@
+@use "../../assets/styles/variables" as *;
+
+.componentNavbar{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    height: fit-content;
+    padding: 14px 16px;
+    
+    background: $color-dark;
+    color: #fff;
+
+    &.light{
+        background: $color-white;
+        color: $color-dark;
+    }
+
+    &.has-notch{
+        padding-top: 60px;
+    }
+    
+
+
+    .back{
+        background: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+        flex: 0;
+    }
+
+    h1{
+        flex: 1;
+    
+        color: #fff;
+        font-size: $font-xl;
+        font-weight: 400;
+    
+        &.text-center{
+            text-align: center;
+        }
+    }
+
+    .back,
+    .custom{
+        background: transparent;
+        border: none;
+        margin: 0;
+        padding: 0;
+        flex: none;
+        width: 20px;
+        height: 20px;
+
+
+        &:disabled{
+            visibility: hidden;
+        }
+    }
+
+    
+    
+}
+
+main:has(.componentNavbar){
+    margin-top: 44px;
+}
+
+main:has(.componentNavbar.has-notch){
+    margin-top: 90px;
+}

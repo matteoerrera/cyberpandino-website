@@ -1,0 +1,46 @@
+@use "../../assets/scss/variables" as vars;
+
+.componentButton{
+
+
+    border-radius: 6px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid transparent;
+    
+    padding: 16px 24px;
+
+    &.primary{
+        background-color: vars.$button-primary;
+        border-color: vars.$button-primary;
+        color: vars.$button-primary-text;
+
+        &:hover{
+            background-color: vars.$button-primary-hover;
+            border-color: vars.$button-primary-hover;
+            color: vars.$button-primary-hover-text;
+        }
+    }
+
+    &.secondary{
+        background-color: vars.$button-secondary;
+        border-color: vars.$button-secondary;
+        color: vars.$button-secondary-text;
+
+        &:hover{
+            background-color: vars.$button-secondary-hover;
+            border-color: vars.$button-secondary-hover;
+            color: vars.$button-secondary-hover-text;
+        }
+    }
+
+   
+    &:disabled{
+        background: vars.$button-disabled !important;
+        color: vars.$button-disabled-text !important;
+        border-color: vars.$button-disabled !important;
+    }
+
+    
+}

@@ -1,0 +1,49 @@
+@use "../../assets/styles/variables" as *;
+
+.componentModal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 100;
+    background: #0008;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+
+    &[data-visibility="false"]{
+        display: none;
+    }
+
+    .content{
+        width: 100%;
+        border-radius: $radius-default;
+        padding: 20px;
+        background: $color-white;
+
+        h3{
+            font-size: 22px;
+            line-height: 1.2;
+            margin-bottom: 8px;
+            color: $color-dark;
+        }
+
+
+        .body{
+            font-size: 16px;
+            line-height: 1.5;
+            color: #777;
+        }
+
+        .componentButton{
+            flex: 1;
+            padding: 12px 16px;
+            
+        } 
+        
+    }
+
+    
+}

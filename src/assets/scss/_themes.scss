@@ -1,0 +1,12 @@
+@use 'variables' as vars;
+
+
+// Temi pagina
+.theme-default {
+    background-color: vars.$background-default;
+}
+
+.theme-dark {
+    background-color: vars.$background-dark;
+    
+}

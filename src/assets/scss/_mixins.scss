@@ -1,0 +1,178 @@
+@use 'variables' as vars;
+
+@mixin respond-to($breakpoint) {
+    @if $breakpoint == mobile {
+        @media (min-width: vars.$mobile) { @content; }
+    }
+    @if $breakpoint == tablet {
+        @media (min-width: vars.$tablet) { @content; }
+    }
+    @if $breakpoint == desktop {
+        @media (min-width: vars.$desktop) { @content; }
+    }
+    @if $breakpoint == large-desktop {
+        @media (min-width: vars.$large-desktop) { @content; }
+    }
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// Nuovo mixin per generare classi di font responsive
+@mixin generate-font-sizes($font-sizes) {
+    @each $name, $values in $font-sizes {
+        $size: map-get($values, 'size');
+        $line-height: map-get($values, 'line-height');
+
+        // Classe base (senza media query)
+        .font-#{$name} {
+            font-size: $size;
+            line-height: $line-height;
+        }
+    }
+
+    @each $name, $values in $font-sizes {
+        $size: map-get($values, 'size');
+        $line-height: map-get($values, 'line-height');
+
+        // Mobile (sm-)
+        @media (min-width: vars.$mobile) {
+            .sm-font-#{$name} {
+                font-size: $size;
+                line-height: $line-height;
+            }
+        }
+
+    }
+
+    @each $name, $values in $font-sizes {
+        $size: map-get($values, 'size');
+        $line-height: map-get($values, 'line-height');
+
+        // Tablet (md-)
+        @media (min-width: vars.$tablet) {
+            .md-font-#{$name} {
+                font-size: $size;
+                line-height: $line-height;
+            }
+        }
+
+    }
+
+    @each $name, $values in $font-sizes {
+        $size: map-get($values, 'size');
+        $line-height: map-get($values, 'line-height');
+
+        // Desktop (lg-)
+        @media (min-width: vars.$desktop) {
+            .lg-font-#{$name} {
+                font-size: $size;
+                line-height: $line-height;
+            }
+        }
+
+    }
+
+    @each $name, $values in $font-sizes {
+        $size: map-get($values, 'size');
+        $line-height: map-get($values, 'line-height');
+
+        // Large Desktop (xl-)
+        @media (min-width: vars.$large-desktop) {
+            .xl-font-#{$name} {
+                font-size: $size;
+                line-height: $line-height;
+            }
+        }
+        
+    }
+
+    @each $name, $values in $font-sizes {
+        $size: map-get($values, 'size');
+        $line-height: map-get($values, 'line-height');
+
+        // Large Desktop (xl-)
+        @media (min-width: vars.$extra-large-desktop) {
+            .xxl-font-#{$name} {
+                font-size: $size;
+                line-height: $line-height;
+            }
+        }
+        
+    }
+} 
+
+
+@mixin generate-font-weights($font-weights) {
+    @each $name, $value in $font-weights {
+        $font-weight: $value;
+
+        // Classe base (senza media query)
+        .font-#{$name} {
+            font-weight: $font-weight;
+        }
+    }
+
+    @each $name, $value in $font-weights {
+        $font-weight: $value;
+
+        // Mobile (sm-)
+        @media (min-width: vars.$mobile) {
+            .sm-font-#{$name} {
+                font-weight: $font-weight;
+            }
+        }
+
+    }
+
+    @each $name, $value in $font-weights {
+        $font-weight: $value;
+
+        // Tablet (md-)
+        @media (min-width: vars.$tablet) {
+            .md-font-#{$name} {
+                font-weight: $font-weight;
+            }
+        }
+
+    }
+
+    @each $name, $value in $font-weights {
+        $font-weight: $value;
+
+        // Desktop (lg-)
+        @media (min-width: vars.$desktop) {
+            .lg-font-#{$name} {
+                font-weight: $font-weight;
+            }
+        }
+
+    }
+
+    @each $name, $value in $font-weights {
+        $font-weight: $value;
+
+        // Large Desktop (xl-)
+        @media (min-width: vars.$large-desktop) {
+            .xl-font-#{$name} {
+                font-weight: $font-weight;
+            }
+        }
+        
+    }
+
+    @each $name, $value in $font-weights{
+        $font-weight: $value;
+
+        // Large Desktop (xl-)
+        @media (min-width: vars.$extra-large-desktop) {
+            .xxl-font-#{$name} {
+                font-weight: $font-weight;
+            }
+        }
+        
+    }
+}

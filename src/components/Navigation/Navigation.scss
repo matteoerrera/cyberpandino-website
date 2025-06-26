@@ -1,0 +1,58 @@
+@use "../../assets/styles/variables" as *;
+
+
+main:has(.componentNavigation){
+    margin-bottom: 100px;
+}
+
+.componentNavigation{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 12px;
+    height: fit-content;
+    padding: 12px 16px;
+    background: $color-dark;
+    color: #fff;
+    list-style: none;
+
+
+    &.has-notch{
+        padding-bottom: 24px;
+    }
+
+    &.light{
+        background: $color-white;
+        color: $color-dark;
+    }
+
+    li {
+        flex: 1;
+
+        a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            text-align: center;
+            flex-direction: column;
+            
+            span{
+                color: #fff;
+                font-size: $font-sm;
+                line-height: 1.2;
+            }
+        }
+
+        &:not(.active){
+            opacity: 0.5;
+        }
+    }
+
+    
+}

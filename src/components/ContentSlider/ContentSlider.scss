@@ -1,0 +1,364 @@
+@use "../../assets/scss/variables" as vars;
+
+
+.componentContentSlider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 80px 0;
+
+   
+    &__image,
+    &__video{
+        position: relative;
+        pointer-events: none;
+
+        img,
+        iframe{
+
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1;
+            object-fit: cover;
+
+            --clip-size: 20px;
+            --top-left-normal: 0 0;
+            --top-left-clip: 0 var(--clip-size), var(--clip-size) 0;
+            --top-right-normal: 100% 0;
+            --top-right-clip: calc(100% - var(--clip-size)) 0, 100% var(--clip-size);
+            --bottom-right-normal: 100% 100%;
+            --bottom-right-clip: 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%;
+            --bottom-left-normal: 0 100%;
+            --bottom-left-clip: var(--clip-size) 100%, 0 calc(100% - var(--clip-size));
+
+            --top-right: var(--top-right-clip);
+            --bottom-right: var(--bottom-right-normal);
+            --top-left: var(--top-left-normal);
+            --bottom-left: var(--bottom-left-normal);
+
+            --clip: polygon(var(--top-left, var(--top-left-normal)), var(--top-right, var(--top-right-normal)), var(--bottom-right, var(--bottom-right-normal)), var(--bottom-left, var(--bottom-left-normal)));
+            -webkit-clip-path: var(--clip);
+            clip-path: var(--clip);
+
+      
+        
+        }
+
+       
+
+
+    }
+
+
+
+    &__play{
+        position: absolute;
+        top: 32px;
+        right: 32px;
+        padding: 4px;
+        background: #111;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        width: 32px;
+        height: 32px;
+
+        --clip-size: 20px;
+        --top-left-normal: 0 0;
+        --top-left-clip: 0 var(--clip-size), var(--clip-size) 0;
+        --top-right-normal: 100% 0;
+        --top-right-clip: calc(100% - var(--clip-size)) 0, 100% var(--clip-size);
+        --bottom-right-normal: 100% 100%;
+        --bottom-right-clip: 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%;
+        --bottom-left-normal: 0 100%;
+        --bottom-left-clip: var(--clip-size) 100%, 0 calc(100% - var(--clip-size));
+        --clip: polygon(var(--top-left, var(--top-left-normal)), var(--top-right, var(--top-right-normal)), var(--bottom-right, var(--bottom-right-normal)), var(--bottom-left, var(--bottom-left-normal)));
+        -webkit-clip-path: var(--clip);
+        clip-path: var(--clip);
+        --top-right: var(--top-right-clip);
+        --bottom-right: var(--bottom-right-normal);
+        --top-left: var(--top-left-normal);
+        --bottom-left: var(--bottom-left-normal);
+        --clip-size: 8px;
+
+    }
+
+    &__wrapper{
+        --clip-size: 20px;
+        --top-left-normal: 0 0;
+        --top-left-clip: 0 var(--clip-size), var(--clip-size) 0;
+        --top-right-normal: 100% 0;
+        --top-right-clip: calc(100% - var(--clip-size)) 0, 100% var(--clip-size);
+        --bottom-right-normal: 100% 100%;
+        --bottom-right-clip: 100% calc(100% - var(--clip-size)), calc(100% - var(--clip-size)) 100%;
+        --bottom-left-normal: 0 100%;
+        --bottom-left-clip: var(--clip-size) 100%, 0 calc(100% - var(--clip-size));
+        --clip: polygon(var(--top-left, var(--top-left-normal)), var(--top-right, var(--top-right-normal)), var(--bottom-right, var(--bottom-right-normal)), var(--bottom-left, var(--bottom-left-normal)));
+        -webkit-clip-path: var(--clip);
+        clip-path: var(--clip);
+        --top-right: var(--top-right-normal);
+        --bottom-right: var(--bottom-right-normal);
+        --top-left: var(--top-left-normal);
+        --bottom-left: var(--bottom-left-clip);
+        --clipped-outline-size: 300px;
+        --non-clipped-outline-size: 48px;
+        --outline-top-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / var(--non-clipped-outline-size) 1px;
+        --outline-top-left-clip: linear-gradient(135deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / var(--clipped-outline-size) 1px;
+        --outline-top-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / var(--non-clipped-outline-size) 1px;
+        --outline-top-right-clip: linear-gradient(-135deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / var(--clipped-outline-size) 1px;
+        --outline-bottom-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / var(--non-clipped-outline-size) 1px;
+        --outline-bottom-right-clip: linear-gradient(-45deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / var(--clipped-outline-size) 1px;
+        --outline-bottom-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px var(--non-clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / var(--non-clipped-outline-size) 1px;
+        --outline-bottom-left-clip: linear-gradient(45deg, var(--tds-color-ct-accent-line) 15px, transparent 15px), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px var(--clipped-outline-size), linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / var(--clipped-outline-size) 1px;
+        --outline-bottom-full-left-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px 60%;
+        --outline-bottom-full-left-60-clip: linear-gradient(45deg, #333 15px, transparent 15px), var(--outline-bottom-full-left-60-basic);
+        --outline-bottom-60-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 60% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom left / 1px 100%;
+        --outline-bottom-60-left-clip: linear-gradient(45deg, #333 15px, transparent 15px), var(--outline-bottom-60-left-basic);
+        --outline-bottom-60-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 60% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px 100%;
+        --outline-bottom-60-right-clip: linear-gradient(-45deg, #333 15px, transparent 15px), var(--outline-bottom-60-right-basic);
+        --outline-top-full-right-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px 60%;
+        --outline-top-full-right-60-clip: linear-gradient(-135deg, #333 15px, transparent 15px), var(--outline-top-full-right-60-basic);
+        --outline-bottom-full-right-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) bottom right / 1px 60%;
+        --outline-bottom-full-right-60-clip: linear-gradient(-45deg, #333 15px, transparent 15px), var(--outline-bottom-full-right-60-basic);
+        --outline-top-full-left-60-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 100% 1px, linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px 60%;
+        --outline-top-full-left-60-clip: linear-gradient(135deg, #333 15px, transparent 15px), var(--outline-top-full-left-60-basic);
+        --outline-upper-left-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top left / 1px 30%;
+        --outline-upper-right-basic: linear-gradient(var(--tds-color-ct-accent-line) 0 0) top right / 1px 30%;
+        --dummy-gradient: linear-gradient(transparent 0 0);
+        --outline-background: var(--outline-top-left, var(--dummy-gradient)), var(--outline-top-right, var(--dummy-gradient)), var(--outline-bottom-right, var(--dummy-gradient)), var(--outline-bottom-left, var(--dummy-gradient)), var(--outline-bottom-full-left-60, var(--dummy-gradient)), var(--outline-bottom-60-left, var(--dummy-gradient)), var(--outline-bottom-60-right, var(--dummy-gradient)), var(--outline-bottom-full-right-60, var(--dummy-gradient)), var(--outline-top-full-left-60, var(--dummy-gradient)), var(--outline-upper-left, var(--dummy-gradient)), var(--outline-upper-right, var(--dummy-gradient)), var(--outline-top-full-right-60, var(--dummy-gradient));
+        background: var(--outline-background);
+        background-repeat: no-repeat;
+        color: var(--tds-color-ct-accent-line);
+
+        .swiper{
+            padding-bottom: 24px !important;
+
+            .swiper-slide{
+                max-width: 90%;
+            }
+        }
+
+    }
+
+    &__content{
+        padding: 24px 8px;
+
+        h3{
+            color: #c7c7c7;
+            font-size: 22px;
+            line-height: 1.3;
+            font-weight: 400;
+            margin-bottom: 8px;
+
+            @media(min-width: 1024px){
+                font-size: 24px;
+                line-height: 1.2;
+            }
+
+            @media(min-width: 1140px){
+                font-size: 28px;
+                line-height: 34px;
+            }
+
+        }
+
+        p{
+            color: #8e8e8e;
+            line-height: 1.5;
+            font-size: 14px;
+            margin: 0;
+            
+
+            .char {
+                will-change: transform;
+                
+            }
+
+            @media(min-width: 960px){
+                line-height: 1.5;
+                font-size: 16px;
+            }
+        }
+
+        @media(min-width: 1140px){
+            display: flex;
+            align-items: flex-start;
+            gap: 100px;
+            justify-content: space-between;
+            padding: 40px 24px;
+
+            h3,p{
+                flex: 1;
+                margin: 0;
+            }
+
+        }
+    }   
+
+    &.reverse-slides{
+        .swiper-slide:nth-child(even){
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 16px;
+
+        }
+    }
+
+    .swiper-pagination-progressbar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        top: initial;
+
+        background: #fff2;
+
+        .swiper-pagination-progressbar-fill{
+            background: #fff;
+        }
+    }
+
+
+    @media(min-width: 1024px){
+        .container{
+            max-width: 1280px;
+        }
+        .swiper{
+            padding-bottom: 0 !important;
+        }
+        .swiper-wrapper{
+            display: block !important;
+            overflow: hidden;
+            cursor: default !important;
+            transform: none !important;
+
+        }
+        .swiper-pagination{
+            display: none !important;
+        }
+        .swiper-slide{
+            display: flex;
+            gap: 60px !important;
+            height: fit-content;
+            align-items: flex-start !important;
+            margin-right: 0 !important;
+            margin-bottom: 40px !important;
+
+            &:nth-child(even){
+                flex-direction: row-reverse !important;
+            }
+
+            .componentContentSlider__image,
+            .componentContentSlider__video{
+                flex: 1 1 50%; 
+                height: fit-content;
+
+                background: linear-gradient(#393c41 0 0) top left /1px 48px,linear-gradient(#393c41 0 0) top left / 48px 1px, linear-gradient(transparent 0 0), linear-gradient(#393c41 0 0) bottom right /1px 48px,linear-gradient(#393c41 0 0) bottom right / 48px 1px, linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0)                ;
+                background-repeat: no-repeat;
+
+                padding: 16px;
+
+                img,iframe{
+                    aspect-ratio: 1;
+                    clip-path: none;
+
+                }
+
+                margin-top: -60px;
+
+                .componentContentSlider__play{
+                    bottom: 32px;
+                    left: 32px;
+                    right: initial;
+                    top: initial;
+                }
+
+                &:first-child{
+                    margin-top: 0 !important;
+                }
+            }
+
+            .componentContentSlider__content{
+                flex: 1 1 50%;
+                display: block;
+                height: fit-content;
+                position: relative;
+                background: linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(transparent 0 0), linear-gradient(#393c41 0 0) top right /100% 1px,linear-gradient(#393c41 0 0) top right /1px 60%;
+                background-repeat: no-repeat;
+
+
+                padding: 60px 40px;
+
+               
+                &:before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: radial-gradient(#393c41 1px,transparent 0);
+                    background-position: -20px -9px;
+                    background-size: 20px 20px;
+                    z-index: 0;
+                    outline-offset: 2px;
+                    pointer-events: none;
+                }
+
+                &:after{
+                    content: "";
+                    background-image: linear-gradient(180deg,transparent 0%, #111 100%);
+                    bottom: 0;
+                    left: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    z-index: -1;
+                    pointer-events: none;
+                }
+
+                h3{
+                    margin-bottom: 16px;
+                }
+
+
+            }
+
+            
+        }
+
+        .swiper-slide:nth-child(even){
+            .componentContentSlider__content{
+                background: 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(transparent 0 0), 
+                linear-gradient(#393c41 0 0) bottom left /100% 1px,
+                linear-gradient(#393c41 0 0) bottom left /1px 60%;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .swiper-slide:last-child{
+           margin-bottom: 0 !important;
+        }
+    }
+
+
+}
+
+
+
+
+

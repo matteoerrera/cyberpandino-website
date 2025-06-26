@@ -1,0 +1,87 @@
+@use "../../assets/scss/variables" as vars;
+
+.componentContentHorizontal {
+  will-change: transform;
+
+  &__container {
+    width: 100%;
+    position: relative;
+  }
+
+
+  &__panels-container {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ddd;
+  }
+
+  &__panel{
+    position: relative;
+    min-width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    color: #333;
+    text-align: left;
+    border-right: 1px solid #f00;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .panels-navigation {
+      width: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end;
+    }
+
+    .anchor-panel,
+    .nav-panel {
+      color: #000;
+      text-transform: uppercase;
+      margin-right: 2rem;
+    }
+  }
+
+  .panels-navigation {
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    right: 2rem;
+  }
+
+
+  .cards-wrapper{
+    display:flex;
+  }
+  .card{
+    width:600px;
+  }
+
+  #panel-5 {
+    width: unset;
+    flex: 1 0 auto
+  }
+  
+  
+
+}
+
+
+
+
+

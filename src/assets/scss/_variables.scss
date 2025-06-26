@@ -1,0 +1,111 @@
+// Colors
+
+// Primary Colors
+$color-primary: #1F1E22 !default;
+$color-primary-light: #313036 !default;
+$color-primary-dark: #141316 !default;
+
+// Secondary Colors
+$color-secondary: #FE0000 !default;
+$color-secondary-light: #FF3336 !default;
+$color-secondary-dark: #E00004 !default;
+
+// Tertiary Colors
+$color-tertiary: #FABC3C !default;
+$color-tertiary-light: #FBCE74 !default;
+$color-tertiary-dark: #F9B224 !default;
+
+
+// Text Colors
+$text-color: #24252B !default;
+$color-text-light: #6C6E76 !default;
+$color-text-dark: #34363F !default;
+$color-text-gray: #C5C8D2 !default;
+$color-text-gray-light: #E7E9F1 !default;
+$color-text-gray-extra-light: #FAFBFF !default;
+$color-text-white: #FFFFFF !default;
+
+
+// Background Colors
+$background-default: #FFFFFF !default;
+$background-dark: #1F1E22 !default;
+
+// Success Colors
+$color-success: #69B578 !default;
+$color-success-light: #B0D6B8 !default;
+$color-success-extra-light: #DBEBDE !default;
+
+// Error Colors
+$color-error: #BF1A2F !default;
+$color-error-light: #DB8993 !default;
+$color-error-extra-light: #EDCCD0 !default;
+
+// Warning Colors
+$color-warning: #F4B266 !default;
+$color-warning-light: #F6D5AF !default;
+$color-warning-extra-light: #F7EADB !default;
+
+// Spacing
+$spacing-unit: 8px !default;
+$container-padding: $spacing-unit * 2 !default;
+$secondary-color: #6c757d !default;
+$background-color: #ffffff !default;
+$text-color: #333333 !default;
+
+// Spacing
+$spacing-unit: 8px !default;
+$container-padding: $spacing-unit * 2 !default;
+
+// Breakpoints
+$mobile: 768px !default;
+$tablet: 960px !default;
+$desktop: 1024px !default;
+$large-desktop: 1280px !default;
+$extra-large-desktop: 1440px !default;
+
+
+// Spacing
+$spacing-1: 2px;
+$spacing-2: 4px;
+$spacing-3: 8px;
+$spacing-4: 16px;
+$spacing-5: 24px;
+$spacing-6: 32px;
+$spacing-7: 40px;
+$spacing-8: 60px;
+$spacing-9: 80px;
+$spacing-10: 100px;
+$spacing-12: 120px;
+$spacing-15: 150px;
+$spacing-20: 200px;
+$spacing-24: 240px;
+$spacing-25: 250px;
+$spacing-30: 300px;
+
+
+// Buttons Styles
+$button-primary: #FE0000;
+$button-primary-border: #FE0000;
+$button-primary-text: #fff;
+$button-primary-hover: #E00004;
+$button-primary-hover-border: #E00004;
+$button-primary-hover-text: #fff;
+
+$button-secondary: #FE0000;
+$button-secondary-border: #FE0000;
+$button-secondary-text: #fff;
+$button-secondary-hover: #E00004;
+$button-secondary-hover-border: #E00004;
+$button-secondary-hover-text: #fff;
+
+
+$button-disabled: #ddd;
+$button-disabled-text: #fff;
+$button-disabled-border: #ddd;
+
+
+
+
+
+
+

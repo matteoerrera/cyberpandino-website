@@ -1,0 +1,76 @@
+// Font sizes
+$font-sizes: (
+  '14': (
+    'size': 14px,
+    'line-height': 1.4
+  ),
+  '16': (
+    'size': 16px,
+    'line-height': 1.4
+  ),
+  '18': (
+    'size': 18px,
+    'line-height': 1.4
+  ),
+  '21': (
+    'size': 21px,
+    'line-height': 1.5
+  ),
+  '20': (
+    'size': 20px,
+    'line-height': 1.5
+  ),
+  '24': (
+    'size': 24px,
+    'line-height': 1.4
+  ),
+  '32': (
+    'size': 32px,
+    'line-height': 1.4
+  ),
+  '36': (
+    'size': 36px,
+    'line-height': 1.4
+  ),
+  '40': (
+    'size': 40px,
+    'line-height': 1.4 
+  ),
+  '48': (
+    'size': 48px,
+    'line-height': 1.3
+  ),
+  '54': ( 
+    'size': 54px,
+    'line-height': 1.3
+  ),
+  '56': ( 
+    'size': 56px,
+    'line-height': 1.3
+  ),
+  '64': (
+    'size': 64px,
+    'line-height': 1.3
+  ),
+  '72': (
+    'size': 72px,
+    'line-height': 1.3
+  ),
+  '80': (
+    'size': 80px,
+    'line-height': 1.3
+  ),
+  '96': (
+    'size': 96px,
+    'line-height': 1.2
+  ),
+); 
+
+// Font Weight
+$font-weights: (
+  'normal': 400,
+  'medium': 500,
+  'semibold': 600,
+  'bold': 700,
+  'extra-bold': 800
+);

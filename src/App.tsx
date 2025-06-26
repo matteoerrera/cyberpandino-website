@@ -21,7 +21,7 @@ import { deviceHasNotch } from "./helpers/deviceHasNotch";
 import Homepage from "./routes/Homepage/Homepage";
 import { Header } from "./components/Header";
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import Footer from "./components/Footer";
@@ -35,7 +35,7 @@ export default function App() {
 
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  useGSAP(() => {
+  useEffect(() => {
     if (main.current) {
       smoother.current = ScrollSmoother.create({
         wrapper: "#smooth-wrapper",
@@ -44,7 +44,14 @@ export default function App() {
         effects: true,
       });
     }
-  }, { scope: main });
+
+    // Cleanup function
+    return () => {
+      if (smoother.current) {
+        smoother.current.kill();
+      }
+    };
+  }, []);
 
   return (
     <>
